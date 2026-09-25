@@ -1,0 +1,584 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: API
+meta:
+  id: wrk_70d9e96e023044bdac9c439c6c4ce59a
+  created: 1786836038484
+  modified: 1786836038484
+  description: ""
+collection:
+  - name: user
+    meta:
+      id: fld_5ca8121391cf45eea4f5f1815953ec90
+      created: 1786836095512
+      modified: 1786836095512
+      sortKey: -1786836095512
+      description: ""
+    children:
+      - url: "{{ _.API }}/user"
+        name: create
+        meta:
+          id: req_304a8351a044406c8390d94f22c0275f
+          created: 1786836099151
+          modified: 1787534928483
+          isPrivate: false
+          description: ""
+          sortKey: -1786836099151
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name":"ultimo teste",
+            "email":"oi@teste.com",
+            	"password":"23112004Gb@"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API }}/user"
+        name: update
+        meta:
+          id: req_a1f0559a9dce49d5b5b35e2d011ef900
+          created: 1787351560274
+          modified: 1787534957916
+          isPrivate: false
+          description: ""
+          sortKey: -1787351560274
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email":"aaa@teste.com",
+            	"name":"mudei"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API }}/user"
+        name: delete
+        meta:
+          id: req_9062952ad65c45d3bd13933f27afba49
+          created: 1787352493987
+          modified: 1787355836346
+          isPrivate: false
+          description: ""
+          sortKey: -1787352493987
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API }}/user"
+        name: get all users
+        meta:
+          id: req_2202f779c95247e9bf4448358d3c639a
+          created: 1787425843382
+          modified: 1787425901440
+          isPrivate: false
+          description: ""
+          sortKey: -1787425843382
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: auth
+    meta:
+      id: fld_a5cf9d25c5084e1ea62eee28acc22bdb
+      created: 1786902895714
+      modified: 1786902895714
+      sortKey: -1786902895714
+      description: ""
+    children:
+      - url: "{{ _.API }}/auth"
+        name: login
+        meta:
+          id: req_1e59954ffa064517b31126f2aa7a4921
+          created: 1786902901201
+          modified: 1787535035027
+          isPrivate: false
+          description: ""
+          sortKey: -1786902901201
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email":"atualizei@teste.com",
+            	"password":"23112004Gb@"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: project
+    meta:
+      id: fld_2728efefbf3847779157aaed09d260d6
+      created: 1786912048706
+      modified: 1787423209079
+      sortKey: -1786912048706
+      description: ""
+    children:
+      - url: "{{ _.API }}/project"
+        name: create
+        meta:
+          id: req_ce1a4fd515c44759a699b67fe7674f90
+          created: 1786912062630
+          modified: 1787532058786
+          isPrivate: false
+          description: ""
+          sortKey: -1786912062630
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            "title":"portifolio",
+            "description":"parajob"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API }}/project/add-member"
+        name: add user
+        meta:
+          id: req_c0907f081141438aa9458a9a882041b9
+          created: 1787095534315
+          modified: 1787533547144
+          isPrivate: false
+          description: ""
+          sortKey: -1787095534315
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"projectId":7,
+            	"role":"ADMIN",
+            	"memberId":2
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API }}/project/change-role"
+        name: update user role
+        meta:
+          id: req_26da4166ab9c41e98867a4be5c356e30
+          created: 1787095801820
+          modified: 1787532364178
+          isPrivate: false
+          description: ""
+          sortKey: -1787095801820
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"projectId":7,
+            	"role":"MEMBER",
+            	"memberId":4
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API }}/project/getAll"
+        name: get all projects
+        meta:
+          id: req_17cd3012d5ba4b7aaf126f5dcc9aa42a
+          created: 1787095864847
+          modified: 1787425990642
+          isPrivate: false
+          description: ""
+          sortKey: -1787095864847
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API }}/project/6"
+        name: update
+        meta:
+          id: req_21f9bc3a337145c28f32878df86a0fff
+          created: 1787355909919
+          modified: 1787522500489
+          isPrivate: false
+          description: ""
+          sortKey: -1787355909919
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title":"estudar masdsadsad",
+            		"description": "mas nada nao"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API }}/project/removeMember"
+        name: remove user
+        meta:
+          id: req_0d896eb30d904f87a77108c000adb99f
+          created: 1787357879790
+          modified: 1787533281142
+          isPrivate: false
+          description: ""
+          sortKey: -1787357879790
+        method: DELETE
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"projectId":7,
+            	"memberId":4
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API }}/project/8"
+        name: delete
+        meta:
+          id: req_908d80d304264a049875b08e3553d99e
+          created: 1787390653304
+          modified: 1787533313050
+          isPrivate: false
+          description: ""
+          sortKey: -1787390653304
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API }}/project"
+        name: get my projects
+        meta:
+          id: req_690f49b2f13846098a8f7eaaa9e647f2
+          created: 1787413860431
+          modified: 1787532422032
+          isPrivate: false
+          description: ""
+          sortKey: -1787413860431
+        method: GET
+        parameters:
+          - name: skip
+            value: "0"
+            description: ""
+            disabled: false
+          - name: take
+            value: "10"
+            description: ""
+            disabled: false
+          - name: search
+            value: ""
+            description: ""
+            disabled: false
+            type: text
+            multiline: false
+          - name: roleFilter
+            value: OWNER
+            description: ""
+            disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      "": ""
+  - name: task
+    meta:
+      id: fld_994728bd67a44ee59f0ee4265118cf96
+      created: 1787391484025
+      modified: 1787391484025
+      sortKey: -1787391484025
+      description: ""
+    children:
+      - url: "{{ _.API }}/task"
+        name: create
+        meta:
+          id: req_fe2fb5ad1fcb4e8f97398b780540f439
+          created: 1787391486894
+          modified: 1787534302881
+          isPrivate: false
+          description: ""
+          sortKey: -1787391486894
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title":"tarefa do joao",
+            	"description":"e paia",
+            	"priority":"MEDIUM",
+            	"dueDate":"2015-11-23",
+            	"signedTo":[6],
+            	"status":"IN_PROGRESS",
+            	"projectId":7
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API }}/task/14"
+        name: update
+        meta:
+          id: req_90a4e1fa2f5e411088db38ac4089caf6
+          created: 1787439998646
+          modified: 1787533777988
+          isPrivate: false
+          description: ""
+          sortKey: -1787439998646
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            "title":"chato",
+            	"priority":"LOW",
+            	"status":"DONE"
+
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API }}/task/sign-member/12"
+        name: sign user
+        meta:
+          id: req_6414cd226cc8406292c6fc52413a3ebb
+          created: 1787443152915
+          modified: 1787533670056
+          isPrivate: false
+          description: ""
+          sortKey: -1787443152915
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"membersIds":[6]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API }}/task/unsigned-member/12"
+        name: unsing user
+        meta:
+          id: req_bdd02ab401944aaba44c2cf62fb7f668
+          created: 1787445203453
+          modified: 1787534215894
+          isPrivate: false
+          description: ""
+          sortKey: -1787445203453
+        method: DELETE
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"membersIds":[6]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API }}/task/4"
+        name: delete task
+        meta:
+          id: req_7715249d3b9b41538a8dcb176154ed79
+          created: 1787445792402
+          modified: 1787487359982
+          isPrivate: false
+          description: ""
+          sortKey: -1787445792402
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API }}/task"
+        name: get my tasks
+        meta:
+          id: req_f41d44f74a534d7988dedeba7e8b1c1e
+          created: 1787489882343
+          modified: 1787535008211
+          isPrivate: false
+          description: ""
+          sortKey: -1787489882343
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            "search":""
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API }}/task/12"
+        name: find task by id
+        meta:
+          id: req_d908de79fe9c468fa38c890fe8cd319f
+          created: 1787510136366
+          modified: 1787534327809
+          isPrivate: false
+          description: ""
+          sortKey: -1787510136366
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_0cb6c8cdb18adcd2f35d7f6bb8134ee89c457f2c
+    created: 1786836038489
+    modified: 1787535036659
+  cookies:
+    - id: 1328ef44-f1fd-4e11-8932-7f49b3d4e006
+      key: access_token
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsImVtYWlsIjoiYXR1YWxpemVpQHRlc3RlLmNvbSIsImlhdCI6MTc4NzUzNTAzNiwiZXhwIjoxNzg3NTM1MzM2fQ.8SnFbHl3qZnJFKZX-5UEKolp3DJ2fBhKlTISpdh4Sz0
+      domain: localhost
+      path: /
+      secure: false
+      httpOnly: true
+      hostOnly: true
+environments:
+  name: Base Environment
+  meta:
+    id: env_0cb6c8cdb18adcd2f35d7f6bb8134ee89c457f2c
+    created: 1786836038487
+    modified: 1786836083398
+    isPrivate: false
+  data:
+    API: localhost:3000
+    "": ""

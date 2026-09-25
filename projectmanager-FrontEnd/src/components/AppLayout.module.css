@@ -1,0 +1,83 @@
+.shell {
+  min-height: 100vh;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.topbarInner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  max-width: 1200px;
+  height: 56px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 16px;
+}
+.brand:hover {
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.nav a {
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--gray-500);
+  font-weight: 500;
+}
+.nav a:hover {
+  background: var(--gray-100);
+  text-decoration: none;
+}
+.nav a.active {
+  background: var(--primary-soft);
+  color: var(--primary-hover);
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.userName {
+  font-weight: 500;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+}
+
+@media (max-width: 640px) {
+  .topbarInner {
+    gap: 12px;
+    padding: 0 12px;
+  }
+  .userName {
+    display: none;
+  }
+  .content {
+    padding: 20px 12px 40px;
+  }
+}
